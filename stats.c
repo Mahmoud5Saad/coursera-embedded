@@ -36,8 +36,33 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  int sorted[SIZE], maximum, minimum;
+  float mean, median;
+  
   /* Statistics and Printing Functions Go Here */
+  
+  print_array(test, SIZE);
+  print_array(test, SIZE);
+  mean    = find_mean    (test, SIZE);
+  median  = find_median  (test, SIZE);
+  maximum = find_maximum (test, SIZE);
+  minimum = find_minimum (test, SIZE);
+  print_statistics();
 
 }
 
 /* Add other Implementation File Code Here */
+
+print_array (int array[], int length){};
+
+float find_median (int array[], int length){};
+
+float find_mean (int array[], int length){};
+
+int find_maximum (int array[], int length){};
+
+int find_minimum (int array[], int length){};
+
+int sort_array ( int array[], int length){};
+
+print_statistics(){};

@@ -9,27 +9,117 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file  Module of the code
+ * @brief function declarations to include in header
  *
- * <Add Extended Description Here>
+ * it defines 7 functions which are used in statistical analysis
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Mahmoud Saad
+ * @date   October 10, 2018
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
-
+print_array (int array[], int length);
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief prints array
+ *
+ * prints each element with spaces in between
+ *
+ * @param array[]         the array itself
+ * @param length          length of array   
+ * @param 
+ * @param 
+ *
+ * @return 
+ */
+
+/* Add Your Declarations and Function Comments here */ 
+float find_median (int array[], int length);
+/**
+ * @brief finds median
+ *
+ * sorts elements and if odd number picks the middle if even, divide the 2 middle elements to get median
+ *
+ * @param array[]         the array itself
+ * @param length          length of array   
+ * @param 
+ * @param 
+ *
+ * @return returns median
+ */
+
+/* Add Your Declarations and Function Comments here */ 
+float find_mean (int array[], int length);
+/**
+ * @brief finds mean
+ *
+ * adds all elements and dividies by their number
+ *
+ * @param array[]         the array itself
+ * @param length          length of array   
+ * @param 
+ * @param 
+ *
+ * @return mean
+ */
+
+/* Add Your Declarations and Function Comments here */ 
+int find_maximum (int array[], int length);
+/**
+ * @brief finds maximum
+ *
+ * stores first value in varable then replace it with any higher value
+ *
+ * @param array[]         the array itself
+ * @param length          length of array   
+ * @param 
+ * @param 
+ *
+ * @return maximum
+ */
+
+/* Add Your Declarations and Function Comments here */ 
+int find_minimum (int array[], int length);
+/**
+ * @brief finds minimum
+ *
+ * stores first value in vaiable then replaces it with any lower value
+ *
+ * @param array[]         the array itself
+ * @param length          length of array   
+ * @param 
+ * @param 
+ *
+ * @return minimum
+ */
+
+/* Add Your Declarations and Function Comments here */ 
+int sort_array ( int array[], int length);
+/**
+ * @brief sorts array
  *
  * <Add Extended Description Here>
  *
+ * @param array[]         the array itself
+ * @param length          length of array   
  * @param <Add InputName> <add description here>
  * @param <Add InputName> <add description here>
+ *
+ * @return <Add Return Informaiton here>
+ */
+
+/* Add Your Declarations and Function Comments here */ 
+print_statistics();
+/**
+ * @brief sorts array
+ *
+ * <Add Extended Description Here>
+ *
+ * @param array[]         the array itself
+ * @param length          length of array   
  * @param <Add InputName> <add description here>
  * @param <Add InputName> <add description here>
  *
@@ -38,3 +128,4 @@
 
 
 #endif /* __STATS_H__ */
+
