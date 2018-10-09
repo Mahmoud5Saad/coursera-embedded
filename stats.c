@@ -2,20 +2,20 @@
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
+ * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
  * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * misuse of this material.
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file Statistical analysis
+ * @brief Does some analysis on databases
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Mahmoud Saad
+ * @date   October 4th, 2018
  *
  */
 
@@ -26,6 +26,9 @@
 
 /* Size of the Data Set */
 #define SIZE (40)
+#define NULL (0)
+
+
 
 void main() {
 
@@ -36,33 +39,79 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
-  int sorted[SIZE], maximum, minimum;
-  float mean, median;
-  
+  int   maximum, minimum, mean, median;
+
   /* Statistics and Printing Functions Go Here */
-  
+
   print_array(test, SIZE);
   print_array(test, SIZE);
   mean    = find_mean    (test, SIZE);
   median  = find_median  (test, SIZE);
   maximum = find_maximum (test, SIZE);
   minimum = find_minimum (test, SIZE);
-  print_statistics();
+  print_statistics(mean, maximum, minimum);
 
 }
 
 /* Add other Implementation File Code Here */
 
-print_array (int array[], int length){};
+print_array (unsigned char array[], int length){};
 
-float find_median (int array[], int length){};
+float find_median (unsigned char array[], int length){};
 
-float find_mean (int array[], int length){};
+float find_mean (unsigned char array[], int count){
+  int i;
+  int sum =0 ;
 
-int find_maximum (int array[], int length){};
+  for(i = 0; i < count; ++i){
 
-int find_minimum (int array[], int length){};
+    sum += array[i];
 
-int sort_array ( int array[], int length){};
+  }
+  int avg = sum /count;
+  return (avg);
+};
 
-print_statistics(){};
+int find_maximum (unsigned char numbers[], int length){
+    int max = 0, i = 0 ;
+    while ( i < length ){
+    if ( i == 0 ) {
+      max = numbers[0];    // Must initialize to values in set, not zero
+    }
+
+
+    if ( numbers[i] >= max){
+      max = numbers[i];
+    }
+    i++;
+    }
+
+    return(max);
+    };
+
+int find_minimum (unsigned char numbers[], int length){
+    int min = 0, i = 0;
+    while ( i < length ){
+    if ( i == 0 ) {
+      min = numbers[0];    // Move to second item and start comparisons
+    }
+
+    if ( numbers[i] <= min){
+      min = numbers[i];
+    }
+    i++;
+    }
+
+
+    return (min);
+    };
+
+int sort_array ( unsigned char array[], int length){};
+
+void print_statistics(int mean, int maximum, int minimum){
+  printf( "The average is: %d\n", mean );
+  printf( "The maximum is: %d\n", maximum  );
+  printf( "The minimum is: %d\n", minimum  );
+
+
+};
