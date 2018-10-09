@@ -42,22 +42,46 @@ void main() {
   int   maximum, minimum, mean, median;
 
   /* Statistics and Printing Functions Go Here */
-
+  printf("The original array is:\n\n");
   print_array(test, SIZE);
+  sort_array(test, SIZE);
+  printf("\nThe sorted array is:\n\n");
   print_array(test, SIZE);
   mean    = find_mean    (test, SIZE);
   median  = find_median  (test, SIZE);
   maximum = find_maximum (test, SIZE);
   minimum = find_minimum (test, SIZE);
-  print_statistics(mean, maximum, minimum);
+  print_statistics(mean, maximum, minimum, median);
+
+
+
 
 }
 
 /* Add other Implementation File Code Here */
 
-print_array (unsigned char array[], int length){};
+print_array (unsigned char array[], int length){
+	int i;
+	for(i = 0; i < length; i++){
+		printf("%d ", array[i]);
+	}
+    printf("\n");
+};
 
-float find_median (unsigned char array[], int length){};
+float find_median (unsigned char array[], int length){
+
+	float median=0;
+
+    // if number of elements are even
+    if(length%2 == 0)
+        median = (array[(length-1)/2] + array[length/2])/2.0;
+    // if number of elements are odd
+    else
+        median = array[length/2];
+
+    return median;
+
+};
 
 float find_mean (unsigned char array[], int count){
   int i;
@@ -106,12 +130,27 @@ int find_minimum (unsigned char numbers[], int length){
     return (min);
     };
 
-int sort_array ( unsigned char array[], int length){};
+int sort_array ( unsigned char array[], int length){
+	int i, j, a, temp = 0;
+    for (i = 0; i < length; ++i)
+    {
+        for (j = i + 1; j < length; ++j)
+        {
+            if (array[i] < array[j])
+            {
+                a = array[i];
+                array[i] = array[j];
+                array[j] = a;
+            }
+        }
+    }
 
-void print_statistics(int mean, int maximum, int minimum){
-  printf( "The average is: %d\n", mean );
-  printf( "The maximum is: %d\n", maximum  );
-  printf( "The minimum is: %d\n", minimum  );
+};
 
+void print_statistics(int mean, int maximum, int minimum, int median){
+  printf( "\nThe average is: %d\n", mean );
+  printf( "\nThe maximum is: %d\n", maximum  );
+  printf( "\nThe minimum is: %d\n", minimum  );
+  printf( "\nThe median is: %d\n", median  );
 
 };

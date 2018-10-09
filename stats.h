@@ -112,7 +112,7 @@ int sort_array ( unsigned char array[], int length);
  */
 
 /* Add Your Declarations and Function Comments here */
-void print_statistics(int mean, int maximum, int minimum);
+void print_statistics(int mean, int maximum, int minimum, int median);
 /**
  * @brief sorts array
  *
