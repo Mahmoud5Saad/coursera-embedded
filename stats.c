@@ -26,7 +26,7 @@
 
 /* Size of the Data Set */
 #define SIZE (40)
-#define NULL (0)
+
 
 
 
@@ -60,7 +60,7 @@ void main() {
 
 /* Add other Implementation File Code Here */
 
-print_array (unsigned char array[], int length){
+void print_array (unsigned char array[], int length){
 	int i;
 	for(i = 0; i < length; i++){
 		printf("%d ", array[i]);
