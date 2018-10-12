@@ -30,7 +30,7 @@
 
 
 
-void main() {
+int main(void) {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -63,7 +63,8 @@ void main() {
 void print_array (unsigned char array[], int length){
 	int i;
 	for(i = 0; i < length; i++){
-		printf("%d ", array[i]);
+                printf("Index:%d", array[i]); 
+		printf("    Element:%d\n", array[i]);
 	}
     printf("\n");
 };
@@ -131,7 +132,7 @@ int find_minimum (unsigned char numbers[], int length){
     };
 
 int sort_array ( unsigned char array[], int length){
-	int i, j, a, temp = 0;
+	int i, j, a;
     for (i = 0; i < length; ++i)
     {
         for (j = i + 1; j < length; ++j)
@@ -144,7 +145,7 @@ int sort_array ( unsigned char array[], int length){
             }
         }
     }
-
+return (0);
 };
 
 void print_statistics(int mean, int maximum, int minimum, int median){
